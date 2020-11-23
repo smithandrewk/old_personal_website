@@ -1,24 +1,126 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+  <head>
+    <title>Andrew Smith</title>
+    <meta
+      name="description"
+      content="Andrew Smith, {description}."
+    />
 
-  <title>Andrew Smith</title>
-  <meta name="description" content="Andrew Smith">
-  <meta name="author" content="Andrew Smith">
-</head>
+    <!-- Web Monetization -->
+    <meta name="monetization" content="$ilp.uphold.com/rEgHHBQGDUDP" />
 
-<body>
-	Hello.
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Andrew Smith" />
+    <meta property="og:url" content="http://smithandrewk.github.io/" />
+    <!-- <meta property="og:image" content="http://cassidoo.co/img/casssquare.jpg" /> -->
+    <meta
+      property="og:description"
+      content="Andrew Smith, {description}."
+    />
+    <meta property="og:site_name" content="Andrew Smith" />
 
-	A prompt I like to use:<br>
-	WHITE="\[\033[37m\]"<br>
-	RED="\[\033[31m\]"<br>
-	GREEN="\[\033[32m\]"<br>
-	YELLOW="\[\033[33m\]"<br>
-	LIGHTRED="\[\033[1;31m\]"<br>
-	DARKCYAN="\[\033[0;36m\]"<br>
-	export PS1="$LIGHTRED[\d \A] $DARKCYAN\w $YELLOW>$GREEN>$RED>$WHITE "<br>
-</body>
+    <!-- Favicon/theme -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/img/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/img/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link rel="manifest" href="/img/manifest.json" />
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#24d05a" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <meta name="msapplication-config" content="/img/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header-section">
+        <div class="header-frame">
+          <h1>Andrew Smith</h1>
+          <h2>Undergraduate Researcher in South Carolina</h2>
+        </div>
+        <div class="img-frame">
+          <img id="propic" src="./img/face1.png" alt="" />
+        </div>
+      </div>
+      <div class="links">
+        <a href="http://github.com/smithandrewk">github</a>
+        <a href="mailto:aks3@email.sc.edu">email</a>
+        <a href="./movies.html">movies</a>
+        <a href="./books.html">books</a>
+      </div>
+      <div class="bio-switcher">
+        <div class="toggler">
+          <button id="short" class="show">Short</button>
+          <button id="long">Long</button>
+        </div>
+        <div class="bio short show">
+          Hello! My name is Andrew, and I am an Undergraduate Researcher at
+          the University of South Carolina in Computer Science. Additionally,
+          I treasure a fresh cup of coffee and a properly-worn math textbook.
+        </div>
+        <div class="bio long">
+          Hello! My name is Andrew Kenneth Smith and I am an Undergraduate
+          Researcher at the University of South Carolina Honors College.
+          I will graduate in May of 2021 with a degree in Computer Science and
+          a degree in Mathematics. I plan to pursue a PhD in Computer Science 
+          beginning in the Fall of 2021. <br>
+          I am deeply interested in Mathematics because it is naturally beautiful.
+          A wise man invested in the stars once wrote that "Mathematics is the language
+          in which God has written the universe." Consider group and ring theory,
+          which are wholly about symmetries, an entirely natural phenomenon, which were
+          able to prove the unsolvability of quintics. <br>
+          Now, computer science at the core is an attempt to break down reason into atoms.
+          The atoms of reason are known as bits. Now, bits make bytes and bytes make.. more
+          bytes, and, as it seems to us today, we might be able to solve any problem imaginable
+          using the atoms of reason. We can encode the human genome in a 1.5 gigabyte text file.
+          We have calculated pi up to 31 trillion digits. We can even talk to one another
+          face-to-face from any point on the globe. Thus, we find that mathematics and 
+          computer science are deeply related. TODO: add story about McNulty describing math as music.<br>
+          I think there is not a higher moment on earth than enjoying something that
+          we have created. A campfire on a cold night is much better enjoyed after
+          having split the wood by hand. A cup of coffee is much warmer to the taste
+          after having brewed the nectar oneself. Caring for a child is infinitely rewarding
+          when they are your own. Additionally, exploring the frontier of your intelligence
+          and thoughts is unimaginably captivating when you have constructe them. This joy of learning
+          and exploration is what I continually seek. <br>
+          Along the way, I do enjoy the process of splitting the wood, brewing the coffee,
+          hiking the mountain, and more. I enjoy to play the piano, but I also enjoy to listen to the piano.
+          A good, convincing book is necessary for development into an interesting human being.
+          I recommend checking out the <a href="./books.html">books</a> I have read.
+
+        </div>
+      </div>
+      <div class="dark-mode-toggler">
+        <input type="checkbox" id="toggler" />
+        <label for="toggler" aria-label="Toggler for Dark Mode"></label>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

@@ -52,7 +52,11 @@ button:hover {
     padding: 20px;
   }
 }
-
+.attribution {
+  margin: 100px auto;
+  padding: 100px;
+  max-width: 650px;
+}
 .header-section {
   display: flex;
   align-items: center;

@@ -45,10 +45,9 @@ function setColorHoverListener() {
 /* Photos */
 
 function setRandomPhoto() {
-  // let num = 1;
-  // document.getElementById("propic").src = `./img/face${num}.png`;
-  let num = Math.floor(Math.random() * 7) + 1;
-  document.getElementById("drewpic").src = `./drew/face${num}.jpg`;
+  let num = 1;
+  document.getElementById("propic").src = `./img/face${num}.png`;
+  #let num = Math.floor(Math.random() * 2) + 1;
 }
 
 /* Bio Toggles */

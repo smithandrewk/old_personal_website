@@ -158,7 +158,7 @@
                   let colors = ["#24d05a", "#eb4888", "#10a2f5", "#e9bc3f"];
                   right.style="color:"+String(colors[Math.floor(Math.random() * colors.length)])
                   left.appendChild(document.createTextNode(message));
-                  right.appendChild(document.createTextNode(ymd[1]+"/"+ymd[2]+"/"+ymd[0]+" @ "+time));
+                  right.appendChild(document.createTextNode(ymd[1]+"/"+ymd[2]+"/"+ymd[0]+" @ "+time+" UTC"));
                   li.appendChild(left)
                   li.appendChild(right)
                   ul.appendChild(li);
@@ -177,7 +177,7 @@
                 /* default is justify content space between */
             }
             .alignleft{
-                width: 50%;
+                width: 60%;
             }
             .alignright{
                 /* color:rgb(0, 187, 115); */

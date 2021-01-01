@@ -54,49 +54,6 @@
                 <label for="toggler" aria-label="Toggler for Dark Mode"></label>
             </div>
         </div>
-        <!-- <div class="attribution">
-      Website adapted from <a href="http://cassidoo.co/" style="color: rgb(0, 153, 220);">Cassidy Williams</a>
-      and <a href="https://web.stanford.edu/~bohg/" style="color: rgb(0, 153, 220);">Jeannette Bohg</a>.
-    </div> -->
-        <script>
-            fetch("https://api.github.com/repos/smithandrewk/thoughts/issues")
-                .then(response => response.json())
-                .then(data => {
-                    let num_commits;
-                    //last 10 commits
-                    if (data.length >= 10) {
-                        num_commits = 10;
-                    } else {
-                        num_commits = data.length
-                    }
-                    for (i = 0; i < num_commits; i++) {
-                        message = data[i].body
-                        date = data[i].created_at
-                        locT = date.indexOf("T")
-                        locZ = date.indexOf("Z")
-                        time = date.substring(locT + 1, locZ)
-                        date = date.substring(0, locT)
-                        ymd = date.split("-")
-                        // The important variables are time and ymd, which are time and year month day, respectively
-                        var ul = document.getElementById("list");
-                        var li = document.createElement("li");
-                        var left = document.createElement("span");
-                        left.className = "alignleft"
-                        var right = document.createElement("span");
-                        right.className = "alignright"
-                        let colors = ["#24d05a", "#eb4888", "#10a2f5", "#e9bc3f"];
-                        right.style = "color:" + String(colors[Math.floor(Math.random() * colors.length)])
-                        left.appendChild(document.createTextNode(message));
-                        right.appendChild(document.createTextNode(ymd[1] + "/" + ymd[2] + "/" + ymd[0] + " @ " + time + " UTC"));
-                        li.appendChild(left)
-                        li.appendChild(right)
-                        ul.appendChild(li);
-                        ul.appendChild(document.createElement("br"))
-                    }
-                    console.log(data)
-                }
-                )
-        </script>
         <style>
             ul {
                 list-style-type: none;

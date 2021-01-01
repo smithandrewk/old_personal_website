@@ -1,627 +1,87 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>books</title><style>
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	text-indent: -1.7em;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.highlight-default {
-}
-.highlight-gray {
-	color: rgb(155,154,151);
-}
-.highlight-brown {
-	color: rgb(100,71,58);
-}
-.highlight-orange {
-	color: rgb(217,115,13);
-}
-.highlight-yellow {
-	color: rgb(223,171,1);
-}
-.highlight-teal {
-	color: rgb(15,123,108);
-}
-.highlight-blue {
-	color: rgb(11,110,153);
-}
-.highlight-purple {
-	color: rgb(105,64,165);
-}
-.highlight-pink {
-	color: rgb(173,26,114);
-}
-.highlight-red {
-	color: rgb(224,62,62);
-}
-.highlight-gray_background {
-	background: rgb(235,236,237);
-}
-.highlight-brown_background {
-	background: rgb(233,229,227);
-}
-.highlight-orange_background {
-	background: rgb(250,235,221);
-}
-.highlight-yellow_background {
-	background: rgb(251,243,219);
-}
-.highlight-teal_background {
-	background: rgb(221,237,234);
-}
-.highlight-blue_background {
-	background: rgb(221,235,241);
-}
-.highlight-purple_background {
-	background: rgb(234,228,242);
-}
-.highlight-pink_background {
-	background: rgb(244,223,235);
-}
-.highlight-red_background {
-	background: rgb(251,228,228);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(55, 53, 47, 0.6);
-	fill: rgba(55, 53, 47, 0.6);
-}
-.block-color-brown {
-	color: rgb(100,71,58);
-	fill: rgb(100,71,58);
-}
-.block-color-orange {
-	color: rgb(217,115,13);
-	fill: rgb(217,115,13);
-}
-.block-color-yellow {
-	color: rgb(223,171,1);
-	fill: rgb(223,171,1);
-}
-.block-color-teal {
-	color: rgb(15,123,108);
-	fill: rgb(15,123,108);
-}
-.block-color-blue {
-	color: rgb(11,110,153);
-	fill: rgb(11,110,153);
-}
-.block-color-purple {
-	color: rgb(105,64,165);
-	fill: rgb(105,64,165);
-}
-.block-color-pink {
-	color: rgb(173,26,114);
-	fill: rgb(173,26,114);
-}
-.block-color-red {
-	color: rgb(224,62,62);
-	fill: rgb(224,62,62);
-}
-.block-color-gray_background {
-	background: rgb(235,236,237);
-}
-.block-color-brown_background {
-	background: rgb(233,229,227);
-}
-.block-color-orange_background {
-	background: rgb(250,235,221);
-}
-.block-color-yellow_background {
-	background: rgb(251,243,219);
-}
-.block-color-teal_background {
-	background: rgb(221,237,234);
-}
-.block-color-blue_background {
-	background: rgb(221,235,241);
-}
-.block-color-purple_background {
-	background: rgb(234,228,242);
-}
-.block-color-pink_background {
-	background: rgb(244,223,235);
-}
-.block-color-red_background {
-	background: rgb(251,228,228);
-}
-.select-value-color-default { background-color: rgba(206,205,202,0.5); }
-.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-.select-value-color-green { background-color: rgba(0,135,107,0.2); }
-.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-.select-value-color-red { background-color: rgba(255,0,26,0.2); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="2e3cfee7-bad6-433c-b0d4-31ab302eb47b" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📚</span></div><h1 class="page-title">books</h1></header><div class="page-body"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Title</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Author</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"></path></svg></span>Date Completed</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Status</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Notes</th></tr></thead><tbody><tr id="84802ffa-bd29-4e8c-bdea-069473e54b1d"><td class="cell-title"><a href="https://www.notion.so/Crime-and-Punishment-84802ffabd294e8cbdea069473e54b1d">Crime and Punishment</a></td><td class="cell-/&#x27;;%">Fyodor Dostoevsky</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-default">Reading</span></td><td class="cell-MjnB"></td></tr><tr id="84133ee2-a99c-41a8-aa6f-e0770fcd3d55"><td class="cell-title"><a href="https://www.notion.so/The-Indespensible-Existence-of-Santa-Clause-84133ee2a99c41a8aa6fe0770fcd3d55">The Indespensible Existence of Santa Clause</a></td><td class="cell-/&#x27;;%">Hannah Fry</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-default">Reading</span></td><td class="cell-MjnB"></td></tr><tr id="48389fa9-5e59-4ec0-b92f-91e9605b8c36"><td class="cell-title"><a href="https://www.notion.so/The-Institutes-of-the-Christian-Religion-48389fa95e594ec0b92f91e9605b8c36">The Institutes of the Christian Religion</a></td><td class="cell-/&#x27;;%">John Calvin</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-default">Reading</span></td><td class="cell-MjnB"></td></tr><tr id="21e59daf-0bb3-4c0b-91d3-d2ecb4de89c6"><td class="cell-title"><a href="https://www.notion.so/1984-21e59daf0bb34c0b91d3d2ecb4de89c6">1984</a></td><td class="cell-/&#x27;;%">George Orwell</td><td class="cell-mOsI"><time>@May 29, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="b9b90f0f-ad93-4e8b-bcd4-7c0c3edc2cb3"><td class="cell-title"><a href="https://www.notion.so/A-Brief-History-of-Time-b9b90f0fad934e8bbcd47c0c3edc2cb3">A Brief History of Time</a></td><td class="cell-/&#x27;;%">Stephen Hawing</td><td class="cell-mOsI"><time>@May 20, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="104a2c36-7778-4fbb-ab03-079b5f668818"><td class="cell-title"><a href="https://www.notion.so/Abstract-Algebra-A-First-Course-104a2c3677784fbbab03079b5f668818">Abstract Algebra: A First Course</a></td><td class="cell-/&#x27;;%">Dan Saracino</td><td class="cell-mOsI"><time>@May 1, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="7ddae7fd-985c-4687-815f-b9fe66e697ce"><td class="cell-title"><a href="https://www.notion.so/Albert-Einstein-7ddae7fd985c4687815fb9fe66e697ce">Albert Einstein</a></td><td class="cell-/&#x27;;%">Walter Isaacson</td><td class="cell-mOsI"><time>@Apr 29, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="e0d901ca-6aa2-4a52-bf48-04c22a1ee605"><td class="cell-title"><a href="https://www.notion.so/Algorithms-to-Live-By-e0d901ca6aa24a52bf4804c22a1ee605">Algorithms to Live By</a></td><td class="cell-/&#x27;;%">Brian Christian; Tom Griffiths</td><td class="cell-mOsI"><time>@Mar 15, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="5f1383f1-c20f-48f4-b132-7407e319e089"><td class="cell-title"><a href="https://www.notion.so/Between-the-World-and-Me-5f1383f1c20f48f4b1327407e319e089">Between the World and Me</a></td><td class="cell-/&#x27;;%">Ta-Nehisi Coates</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="484b2af4-cbe3-49fa-8767-0156cf89f5ec"><td class="cell-title"><a href="https://www.notion.so/Brief-Answers-to-the-Big-Questions-484b2af4cbe349fa87670156cf89f5ec">Brief Answers to the Big Questions</a></td><td class="cell-/&#x27;;%">Stephen Hawking</td><td class="cell-mOsI"><time>@May 5, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="4de62654-d2b4-4540-8bc6-8abaa093a2d4"><td class="cell-title"><a href="https://www.notion.so/Desiring-God-Meditations-of-a-Christian-Hedonist-4de62654d2b445408bc68abaa093a2d4">Desiring God: Meditations of a Christian Hedonist</a></td><td class="cell-/&#x27;;%">John Piper</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="4553e448-d973-497f-ab58-3760a44a9d69"><td class="cell-title"><a href="https://www.notion.so/Don-t-Waste-Your-Life-4553e448d973497fab583760a44a9d69">Don&#x27;t Waste Your Life</a></td><td class="cell-/&#x27;;%">John Piper</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="2d3bb0e4-6be0-4e8a-abda-d4f6f1937d98"><td class="cell-title"><a href="https://www.notion.so/Einstein-His-Life-and-Universe-2d3bb0e46be04e8aabdad4f6f1937d98">Einstein: His Life and Universe</a></td><td class="cell-/&#x27;;%">Walter Isaacson</td><td class="cell-mOsI"><time>@May 1, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="0c04e35e-90c4-48c6-ad7a-f2d3cbc0b038"><td class="cell-title"><a href="https://www.notion.so/Fahrenheit-451-0c04e35e90c448c6ad7af2d3cbc0b038">Fahrenheit 451</a></td><td class="cell-/&#x27;;%">Ray Bradbury</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="c76c5000-1cb1-4919-8430-b23276353805"><td class="cell-title"><a href="https://www.notion.so/Frankenstein-c76c50001cb149198430b23276353805">Frankenstein</a></td><td class="cell-/&#x27;;%">Mary Shelley</td><td class="cell-mOsI"><time>@Feb 18, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="b320cce3-f2b0-4d88-bd79-d52e9c904ca4"><td class="cell-title"><a href="https://www.notion.so/Hamlet-b320cce3f2b04d88bd79d52e9c904ca4">Hamlet</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="eea9dfad-40e8-4932-96b7-18260c907a88"><td class="cell-title"><a href="https://www.notion.so/Harry-Potter-and-the-Chamber-of-Secrets-eea9dfad40e8493296b718260c907a88">Harry Potter and the Chamber of Secrets</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="12b5ef75-6e18-4244-b7bb-3a1c34d3ffb4"><td class="cell-title"><a href="https://www.notion.so/Harry-Potter-and-the-Deathly-Hallows-12b5ef756e184244b7bb3a1c34d3ffb4">Harry Potter and the Deathly Hallows</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="ddfa7ce5-8bd0-4f4f-870c-f52a1f968d62"><td class="cell-title"><a href="https://www.notion.so/Harry-Potter-and-the-Goblet-of-Fire-ddfa7ce58bd04f4f870cf52a1f968d62">Harry Potter and the Goblet of Fire</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="8e33def3-49b2-4467-93f4-6ebb47aeda5a"><td class="cell-title"><a href="https://www.notion.so/Harry-Potter-and-the-Half-Blood-Prince-8e33def349b2446793f46ebb47aeda5a">Harry Potter and the Half-Blood Prince</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="8c2dd5f6-bf28-4395-9b6a-1effc91f6221"><td class="cell-title"><a href="https://www.notion.so/Harry-Potter-and-the-Order-of-the-Phoenix-8c2dd5f6bf2843959b6a1effc91f6221">Harry Potter and the Order of the Phoenix</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="3ac0d13a-d9c8-4f5a-b2fb-9f5f61259f9e"><td class="cell-title"><a href="https://www.notion.so/Harry-Potter-and-the-Prisoner-of-Azkaban-3ac0d13ad9c84f5ab2fb9f5f61259f9e">Harry Potter and the Prisoner of Azkaban</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="0121f0c7-0aaf-46b0-a7bc-7601d651ebd9"><td class="cell-title"><a href="https://www.notion.so/Harry-Potter-and-the-Sorcerer-s-Stone-0121f0c70aaf46b0a7bc7601d651ebd9">Harry Potter and the Sorcerer&#x27;s Stone</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="59db9ea7-0677-4bf5-967d-ed56c1b0fc10"><td class="cell-title"><a href="https://www.notion.so/Into-the-Wild-59db9ea706774bf5967ded56c1b0fc10">Into the Wild</a></td><td class="cell-/&#x27;;%">Jon Krakauer</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="6cbbbae3-dc5c-4cef-9a4c-90afd6732f23"><td class="cell-title"><a href="https://www.notion.so/Man-s-Search-for-Meaning-6cbbbae3dc5c4cef9a4c90afd6732f23">Man&#x27;s Search for Meaning</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="5d0fb760-ea93-4160-8582-b426b859d6b5"><td class="cell-title"><a href="https://www.notion.so/Mere-Christianity-5d0fb760ea9341608582b426b859d6b5">Mere Christianity</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="c78d2cb1-948b-47ba-8318-26e99d5afa45"><td class="cell-title"><a href="https://www.notion.so/Out-of-the-Silent-Planet-c78d2cb1948b47ba831826e99d5afa45">Out of the Silent Planet</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="7465b4b0-49fd-404d-80ef-aea42ffffc38"><td class="cell-title"><a href="https://www.notion.so/Prince-Caspian-7465b4b049fd404d80efaea42ffffc38">Prince Caspian</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="3faf0de8-f2ea-49a5-b9df-bfafb24e711c"><td class="cell-title"><a href="https://www.notion.so/The-Call-of-the-Wild-3faf0de8f2ea49a5b9dfbfafb24e711c">The Call of the Wild</a></td><td class="cell-/&#x27;;%">Jack London</td><td class="cell-mOsI"><time>@Jan 9, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="993605da-f40c-436b-8c21-c84ed9a5c12c"><td class="cell-title"><a href="https://www.notion.so/The-Fellowship-of-the-Ring-993605daf40c436b8c21c84ed9a5c12c">The Fellowship of the Ring</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="15606890-a4bb-43a0-b670-64f071b839f2"><td class="cell-title"><a href="https://www.notion.so/The-Fire-Next-Time-15606890a4bb43a0b67064f071b839f2">The Fire Next Time</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="4e92face-0ba4-4ef1-a11b-0ebcb01822de"><td class="cell-title"><a href="https://www.notion.so/The-Giver-4e92face0ba44ef1a11b0ebcb01822de">The Giver</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="b314fb04-17d9-4fd6-9054-a0e4ef678a24"><td class="cell-title"><a href="https://www.notion.so/The-Great-Divorce-b314fb0417d94fd69054a0e4ef678a24">The Great Divorce</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="1645f2a7-b320-4e37-9ec7-1892e9787d74"><td class="cell-title"><a href="https://www.notion.so/The-Great-Gatsby-1645f2a7b3204e379ec71892e9787d74">The Great Gatsby</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="ad227d8d-5620-4f1f-86b2-99ca7eb64800"><td class="cell-title"><a href="https://www.notion.so/The-Hobbit-ad227d8d56204f1f86b299ca7eb64800">The Hobbit</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="f99e081c-8c39-4610-9264-58ef8e67e49e"><td class="cell-title"><a href="https://www.notion.so/The-Horse-and-His-Boy-f99e081c8c394610926458ef8e67e49e">The Horse and His Boy</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="2325591f-be5f-4d19-bb05-589070d8b4db"><td class="cell-title"><a href="https://www.notion.so/The-Knowledge-of-the-Holy-2325591fbe5f4d19bb05589070d8b4db">The Knowledge of the Holy</a></td><td class="cell-/&#x27;;%">A.W. Tozer</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="1a697d93-6ef3-4cc1-881b-902932b09b81"><td class="cell-title"><a href="https://www.notion.so/The-Last-Battle-1a697d936ef34cc1881b902932b09b81">The Last Battle</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="84b9814d-3dbb-4264-9fd8-619477d9dc54"><td class="cell-title"><a href="https://www.notion.so/The-Lion-the-Witch-and-the-Wardrobe-84b9814d3dbb42649fd8619477d9dc54">The Lion, the Witch, and the Wardrobe</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="52003f7b-4e35-4cb4-941d-d5168a65cffa"><td class="cell-title"><a href="https://www.notion.so/The-Magician-s-Nephew-52003f7b4e354cb4941dd5168a65cffa">The Magician&#x27;s Nephew</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="22c051ad-6a5a-4650-9eb4-a00b44a7e1fd"><td class="cell-title"><a href="https://www.notion.so/The-Mathematics-of-Love-22c051ad6a5a46509eb4a00b44a7e1fd">The Mathematics of Love</a></td><td class="cell-/&#x27;;%">Hannah Fry</td><td class="cell-mOsI"><time>@May 2, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="e91daa8b-877d-4ede-bf17-d40a728c5819"><td class="cell-title"><a href="https://www.notion.so/The-Pilgrim-s-Progress-e91daa8b877d4edebf17d40a728c5819">The Pilgrim&#x27;s Progress</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="a4f4cb06-9c49-4658-b448-053fe4783ada"><td class="cell-title"><a href="https://www.notion.so/The-Pursuit-of-God-a4f4cb069c494658b448053fe4783ada">The Pursuit of God</a></td><td class="cell-/&#x27;;%">A.W. Tozer</td><td class="cell-mOsI"><time>@Mar 12, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="01a70284-79b8-4cc9-9219-0357338afb83"><td class="cell-title"><a href="https://www.notion.so/The-Push-A-Climber-s-Search-for-the-Path-01a7028479b84cc992190357338afb83">The Push: A Climber&#x27;s Search for the Path</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="0af41e98-222e-42c8-bd07-f6f4baab0a86"><td class="cell-title"><a href="https://www.notion.so/The-Return-of-the-King-0af41e98222e42c8bd07f6f4baab0a86">The Return of the King</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="ad18411c-b902-4c06-98fa-e0872838c03f"><td class="cell-title"><a href="https://www.notion.so/The-Scarlet-Letter-ad18411cb9024c0698fae0872838c03f">The Scarlet Letter</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="38b9da5e-5e11-4e14-b050-7c8a1f053934"><td class="cell-title"><a href="https://www.notion.so/The-Screwtape-Letters-38b9da5e5e114e14b0507c8a1f053934">The Screwtape Letters</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="98678194-23fd-4a55-92d7-23738897aaae"><td class="cell-title"><a href="https://www.notion.so/The-Silver-Chair-9867819423fd4a5592d723738897aaae">The Silver Chair</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="869e803b-3a82-48fd-ac88-52852100b629"><td class="cell-title"><a href="https://www.notion.so/The-Two-Towers-869e803b3a8248fdac8852852100b629">The Two Towers</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="c30ee7ca-929d-4384-bd25-ca4ba9e31ad9"><td class="cell-title"><a href="https://www.notion.so/The-Voyage-of-the-Dawn-Treader-c30ee7ca929d4384bd25ca4ba9e31ad9">The Voyage of the Dawn Treader</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="f15303c9-c8a2-48d6-aea5-7d0cc3648b2c"><td class="cell-title"><a href="https://www.notion.so/Travels-in-Alaska-f15303c9c8a248d6aea57d0cc3648b2c">Travels in Alaska</a></td><td class="cell-/&#x27;;%">John Muir</td><td class="cell-mOsI"><time>@Apr 1, 2020</time></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="c08e467c-6498-4290-85ae-3a33433f71a0"><td class="cell-title"><a href="https://www.notion.so/Wuthering-Heights-c08e467c6498429085ae3a33433f71a0">Wuthering Heights</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="ac343366-997b-4727-8ddf-8645347e614d"><td class="cell-title"><a href="https://www.notion.so/Life-of-Pi-ac343366997b47278ddf8645347e614d">Life of Pi</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="5bb7b0a5-fd0d-4658-8421-95389b75ad83"><td class="cell-title"><a href="https://www.notion.so/The-Hunger-Games-5bb7b0a5fd0d4658842195389b75ad83">The Hunger Games</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="bc8d3757-94bf-4c57-a04d-babad2aae1ac"><td class="cell-title"><a href="https://www.notion.so/Spurgeon-s-Sermons-Vol-1-bc8d375794bf4c57a04dbabad2aae1ac">Spurgeon&#x27;s Sermons Vol. 1</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="70a0bad7-2163-4fb6-a425-ee02bc5995ac"><td class="cell-title"><a href="https://www.notion.so/Spurgeon-s-Sermons-Vol-2-70a0bad721634fb6a425ee02bc5995ac">Spurgeon&#x27;s Sermons Vol. 2</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-red">Completed</span></td><td class="cell-MjnB"></td></tr><tr id="ec8d2cb2-7d32-4e09-8212-3748f4ca261a"><td class="cell-title"><a href="https://www.notion.so/12-Rules-For-Life-ec8d2cb27d324e0982123748f4ca261a">12 Rules For Life</a></td><td class="cell-/&#x27;;%">Jordan Peterson</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-green">To Read</span></td><td class="cell-MjnB"></td></tr><tr id="50e46049-d45d-423f-bb08-9f2a9254dcd1"><td class="cell-title"><a href="https://www.notion.so/Brave-New-World-50e46049d45d423fbb089f2a9254dcd1">Brave New World</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-green">To Read</span></td><td class="cell-MjnB"></td></tr><tr id="43302ff1-7b48-460e-b7e2-17dacd3aad20"><td class="cell-title"><a href="https://www.notion.so/Sapians-43302ff17b48460eb7e217dacd3aad20">Sapians</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-green">To Read</span></td><td class="cell-MjnB">Recommended by Alex Killman</td></tr><tr id="50364121-4748-4794-9a04-93e130c969f7"><td class="cell-title"><a href="https://www.notion.so/Beyond-Doubt-50364121474847949a0493e130c969f7">Beyond Doubt</a></td><td class="cell-/&#x27;;%">Jordan Peterson</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-green">To Read</span></td><td class="cell-MjnB"></td></tr><tr id="07e24c68-bbeb-4ae8-9633-fd624bfec73f"><td class="cell-title"><a href="https://www.notion.so/Anna-Karenina-07e24c68bbeb4ae89633fd624bfec73f">Anna Karenina</a></td><td class="cell-/&#x27;;%"></td><td class="cell-mOsI"></td><td class="cell-&quot;a?."></td><td class="cell-MjnB"></td></tr><tr id="1c8eb80c-16fb-407d-924c-cad6e7e841d5"><td class="cell-title"><a href="https://www.notion.so/Talking-to-Strangers-1c8eb80c16fb407d924ccad6e7e841d5">Talking to Strangers</a></td><td class="cell-/&#x27;;%">Malcom Gladwell</td><td class="cell-mOsI"></td><td class="cell-&quot;a?."><span class="selected-value select-value-color-default">Reading</span></td><td class="cell-MjnB"></td></tr></tbody></table></div></article></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Andrew Smith</title>
+    <meta name="description" content="Andrew Smith, {description}." />
+
+    <!-- Web Monetization -->
+    <meta name="monetization" content="$ilp.uphold.com/rEgHHBQGDUDP" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Andrew Smith" />
+    <meta property="og:url" content="http://smithandrewk.github.io/" />
+    <!-- <meta property="og:image" content="http://cassidoo.co/img/casssquare.jpg" /> -->
+    <meta property="og:description" content="Andrew Smith, {description}." />
+    <meta property="og:site_name" content="Andrew Smith" />
+
+    <!-- Favicon/theme -->
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="/img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png"
+        sizes="32x32" />
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png"
+        sizes="16x16" />
+    <link rel="manifest" href="/img/manifest.json" />
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#24d05a" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <meta name="msapplication-config" content="/img/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-section">
+            <div class="header-frame">
+                <h1>Books</h1>
+                <h3>(R:=reading,C:=completed,Q:=queue)</h3>
+            </div>
+
+        </div>
+        <div class="bio-switcher">
+            <div class="bio short show">
+                <script src="books.js"></script>
+            </div>
+            <div class="dark-mode-toggler">
+                <input type="checkbox" id="toggler" />
+                <label for="toggler" aria-label="Toggler for Dark Mode"></label>
+            </div>
+        </div>
+
+        <style>
+            table{
+                width: 100%;
+                text-align: center;
+            }
+            .title{
+                text-align: left;
+            }
+            .comments{
+                text-align: right;
+            }
+            .container {
+            margin: 50px auto;
+            padding: 5px;
+            max-width: 850px;
+            }
+            table td, table td * {
+            vertical-align: top;
+            }
+            td{
+                padding: .51em;
+            }
+            .header-frame{
+                text-align: center;
+            }
+        </style>
+        <script src="./script.js"></script>
+</body>
+
+</html>

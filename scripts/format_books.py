@@ -8,7 +8,7 @@ import csv
 
 html_str =["document.write(`<table>"]  
 
-with open("books.csv") as file:
+with open("../data/books.csv") as file:
     header = file.readline().split(',')
     html_str.append("<tr><th class=\"title\">"+header[0]+"</th><th>"+header[1]+"</th><th class=\"comments\">"+header[2]+"</th><th></tr><tr></tr>")
     for line in file:
@@ -17,6 +17,6 @@ with open("books.csv") as file:
  
 html_str.append("""</table>`)""")
 html_str = "".join(html_str)
-Html_file= open("books.js","w")
+Html_file= open("../js/books.js","w")
 Html_file.write(html_str)
 Html_file.close()

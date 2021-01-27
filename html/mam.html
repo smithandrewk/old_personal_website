@@ -16,7 +16,7 @@
     <meta property="og:site_name" content="Andrew Smith" />
 
     <!-- Favicon/theme -->
-    <link rel="apple-touch-icon" sizes="180x180"
+    <!-- <link rel="apple-touch-icon" sizes="180x180"
         href="/img/apple-touch-icon.png" />
     <link rel="icon" type="image/png" href="/img/favicon-32x32.png"
         sizes="32x32" />
@@ -25,7 +25,7 @@
     <link rel="manifest" href="/img/manifest.json" />
     <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#24d05a" />
     <link rel="shortcut icon" href="/img/favicon.ico" />
-    <meta name="msapplication-config" content="/img/browserconfig.xml" />
+    <meta name="msapplication-config" content="/img/browserconfig.xml" /> -->
     <meta name="theme-color" content="#ffffff" />
 
     <meta name="viewport"
@@ -33,55 +33,71 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono"
         rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../style/style.css" />
 </head>
 
 <body>
     <div class="container">
         <div class="header-section">
             <div class="header-frame">
-                <h1>Movies</h1>
-                <!-- <h3>(W:=watched,Q:=queue)</h3> -->
+                <h1>Texts with Mam</h1>
             </div>
 
         </div>
         <div class="bio-switcher">
             <div class="bio short show">
-                <script src="movies.js"></script>
+                <script src="../js/mam.js">
+                </script>
             </div>
             <div class="dark-mode-toggler">
                 <input type="checkbox" id="toggler" />
                 <label for="toggler" aria-label="Toggler for Dark Mode"></label>
             </div>
         </div>
-
         <style>
-            table{
+            ul {
+                list-style-type: none;
+                padding:0;
+            }
+
+            li {
+                display: flex;
+                /* default is justify content space between */
+            }
+            .text {
                 width: 100%;
-                text-align: center;
+                margin-right: 10%;
             }
-            .title{
-                text-align: left;
+
+            .me {
+                text-align: end;
+                color: rgb(56, 149, 255);
             }
-            .comments{
-                text-align: right;
+            .mam{
+                color: rgb(33, 196, 0);
             }
-            .container {
-            margin: 50px auto;
-            padding: 5px;
-            max-width: 850px;
+
+            .date {
+                margin-left: auto;
             }
-            table td, table td * {
-            vertical-align: top;
+            img{
+                width: 45%;
+                border-radius: 10%;
             }
-            td{
-                padding: .51em;
+            .imgme{
+                width: 100%;
+                margin-right: 10%;
+                text-align: end;
             }
-            .header-frame{
-                text-align: center;
+            .imgmam{
+                width: 100%;
+                margin-right: 10%;
+            }
+            span{
+                word-break: break-word;
             }
         </style>
-        <script src="./script.js"></script>
+        <script src="../js/script.js"></script>
 </body>
 
 </html>

@@ -161,7 +161,16 @@
                   right.className="alignright"
                   let colors = ["#24d05a", "#eb4888", "#10a2f5", "#e9bc3f"];
                   right.style="color:"+String(colors[Math.floor(Math.random() * colors.length)])
-                  left.appendChild(document.createTextNode(message));
+                  // Handle entirely-italicized messages
+                  if(message[0]=="_"){ // if the first character of the message is the markdown italics character
+                    message = message.replaceAll("_","") // remove all underscores
+                    a = left.appendChild(document.createElement("i")); // create an italics node
+                    a.appendChild(document.createTextNode(message)); // append message to italics node
+                  } else { // if first character is not underscore
+                    left.appendChild(document.createTextNode(message)); // just append message to span
+                  }
+
+
                   right.appendChild(document.createTextNode(ymd[1]+"/"+ymd[2]+"/"+ymd[0]+" @ "+time+" UTC"));
                   li.appendChild(left)
                   li.appendChild(right)

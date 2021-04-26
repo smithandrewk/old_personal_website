@@ -2,311 +2,413 @@
 <html lang="en">
 
 <head>
-    <title>Andrew Smith</title>
-    <meta name="description" content="Andrew Smith, {description}." />
+  <title>Andrew Smith</title>
+  <meta name="description" content="Andrew Smith, {description}." />
 
-    <!-- Open Graph data -->
-    <meta property="og:title" content="Andrew Smith" />
-    <meta property="og:url" content="http://smithandrewk.github.io/" />
-    <!-- <meta property="og:image" content="http://cassidoo.co/img/casssquare.jpg" /> -->
-    <meta property="og:description" content="Andrew Smith, {description}." />
-    <meta property="og:site_name" content="Andrew Smith" />
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Andrew Smith" />
+  <meta property="og:url" content="http://smithandrewk.github.io/" />
+  <!-- <meta property="og:image" content="http://cassidoo.co/img/casssquare.jpg" /> -->
+  <meta property="og:description" content="Andrew Smith, {description}." />
+  <meta property="og:site_name" content="Andrew Smith" />
 
-    <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="../style/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" />
+  <link rel="stylesheet" href="../style/style.css" />
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="header-section">
-            <div class="header-frame">
-                <h1>Crypto</h1>
-            </div>
+  <div class="container">
+    <div class="header-section">
+      <div class="header-frame">
+        <h1>Crypto</h1>
+      </div>
 
+    </div>
+    <div class="bio-switcher">
+      <div class="toggler">
+        <button id="1">1 DAY</button>
+        <button id="7" class="show">7 DAY</button>
+        <button id="30">30 DAY</button>
+        <button id="365">365 DAY</button>
+      </div>
+      <div class="bio 1">
+        <div id='bitcoin_1'>
+          <!-- Plotly chart will be drawn inside this DIV -->
         </div>
-        <div class="bio-switcher">
-            <div class="toggler">
-              <button id="1" class="show">1 DAY</button>
-              <button id="7">7 DAY</button>
-              <button id="30">30 DAY</button>
-              <button id="365">365 DAY</button>
-            </div>
-            <div class="bio 1 show">
-              <div id='bitcoin_1'><!-- Plotly chart will be drawn inside this DIV --></div>	
-              <div id='ethereum_1'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='dogecoin_1'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='bitcoin-cash_1'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='litecoin_1'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='bitcoin-cash-sv_1'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='ethereum-classic_1'><!-- Plotly chart will be drawn inside this DIV --></div>
-            </div>
-            <div class="bio 7">
-              <div id='bitcoin_7'><!-- Plotly chart will be drawn inside this DIV --></div>	
-              <div id='ethereum_7'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='dogecoin_7'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='bitcoin-cash_7'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='litecoin_7'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='bitcoin-cash-sv_7'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='ethereum-classic_7'><!-- Plotly chart will be drawn inside this DIV --></div>
-            </div>
-            <div class="bio 30">
-              <div id='bitcoin_30'><!-- Plotly chart will be drawn inside this DIV --></div>	
-              <div id='ethereum_30'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='dogecoin_30'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='bitcoin-cash_30'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='litecoin_30'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='bitcoin-cash-sv_30'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='ethereum-classic_30'><!-- Plotly chart will be drawn inside this DIV --></div>
-            </div>
-            <div class="bio 365">
-              <div id='bitcoin_365'><!-- Plotly chart will be drawn inside this DIV --></div>	
-              <div id='ethereum_365'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='dogecoin_365'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='bitcoin-cash_365'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='litecoin_365'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='bitcoin-cash-sv_365'><!-- Plotly chart will be drawn inside this DIV --></div>
-              <div id='ethereum-classic_365'><!-- Plotly chart will be drawn inside this DIV --></div>
-            </div>
+        <div id='ethereum_1'>
+          <!-- Plotly chart will be drawn inside this DIV -->
         </div>
-        <div class="dark-mode-toggler" style="display: none;">
-          <input type="checkbox" id="toggler" />
-          <label for="toggler" aria-label="Toggler for Dark Mode"></label>
+        <div id='dogecoin_1'>
+          <!-- Plotly chart will be drawn inside this DIV -->
         </div>
+        <div id='bitcoin-cash_1'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='litecoin_1'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='bitcoin-cash-sv_1'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='ethereum-classic_1'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+      </div>
+      <div class="bio 7 show">
+        <div id='bitcoin_7'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='ethereum_7'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='dogecoin_7'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='bitcoin-cash_7'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='litecoin_7'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='bitcoin-cash-sv_7'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='ethereum-classic_7'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+      </div>
+      <div class="bio 30">
+        <div id='bitcoin_30'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='ethereum_30'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='dogecoin_30'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='bitcoin-cash_30'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='litecoin_30'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='bitcoin-cash-sv_30'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='ethereum-classic_30'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+      </div>
+      <div class="bio 365">
+        <div id='bitcoin_365'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='ethereum_365'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='dogecoin_365'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='bitcoin-cash_365'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='litecoin_365'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='bitcoin-cash-sv_365'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+        <div id='ethereum-classic_365'>
+          <!-- Plotly chart will be drawn inside this DIV -->
+        </div>
+      </div>
+    </div>
 
 
-        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
-        <script>
-          function plot_coin_1(coin){
-            var xs = []
-            var ys = []
-            fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=1`)
-              .then((res)=>res.json())
-              .then(data => {
-                data.forEach(element => {
-                  xs.push(new Date(element[0]))
-                  ys.push(element[4])
-                });
-              })
-              .then(()=>{
-                if(ys[0]>=ys[ys.length-1]){
-                  color = 'rgb(219, 64, 82)'
-                } else {
-                  color = 'rgb(64, 219, 82)'
-                }
-                var btc = {
-                  x: xs,
-                  y: ys,
-                  marker:{
-                    color:color
-                  }
-                };
-                var data = [btc];
-                var layout = {
-                  autosize: true,
-                  xaxis:{
-                    fixedrange:true
-                  },
-                  yaxis:{
-                    fixedrange:true
-                  },
-                  title: {
-                    text:coin,
-                    font: {
-                      family: 'Courier New, monospace',
-                      size: 24
-                    },
-                    xref: 'paper',
-                    x: 0.5,
-                  },
-                };
-                Plotly.newPlot(coin+"_1", data,layout,{responsive:true});
-              })
-          }
-          function plot_coin_7(coin){
-            var xs = []
-            var ys = []
-            fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=7`)
-              .then((res)=>res.json())
-              .then(data => {
-                data.forEach(element => {
-                  xs.push(new Date(element[0]))
-                  ys.push(element[4])
-                });
-              })
-              .then(()=>{
-                if(ys[0]>=ys[ys.length-1]){
-                  color = 'rgb(219, 64, 82)'
-                } else {
-                  color = 'rgb(64, 219, 82)'
-                }
-                var btc = {
-                  x: xs,
-                  y: ys,
-                  marker:{
-                    color:color
-                  }
-                };
-                var data = [btc];
-                var layout = {
-                  autosize: true,
-                  xaxis:{
-                    fixedrange:true
-                  },
-                  yaxis:{
-                    fixedrange:true
-                  },
-                  title: {
-                    text:coin,
-                    font: {
-                      family: 'Courier New, monospace',
-                      size: 24
-                    },
-                    xref: 'paper',
-                    x: 0.5,
-                  },
-                };
-                Plotly.newPlot(coin+"_7", data,layout,{responsive:true});
-              })
-          }
-          function plot_coin_30(coin){
-            var xs = []
-            var ys = []
-            fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=30`)
-              .then((res)=>res.json())
-              .then(data => {
-                data.forEach(element => {
-                  xs.push(new Date(element[0]))
-                  ys.push(element[4])
-                });
-              })
-              .then(()=>{
-                if(ys[0]>=ys[ys.length-1]){
-                  color = 'rgb(219, 64, 82)'
-                } else {
-                  color = 'rgb(64, 219, 82)'
-                }
-                var btc = {
-                  x: xs,
-                  y: ys,
-                  marker:{
-                    color:color
-                  }
-                };
-                var data = [btc];
-                var layout = {
-                  autosize: true,
-                  xaxis:{
-                    fixedrange:true
-                  },
-                  yaxis:{
-                    fixedrange:true
-                  },
-                  title: {
-                    text:coin,
-                    font: {
-                      family: 'Courier New, monospace',
-                      size: 24
-                    },
-                    xref: 'paper',
-                    x: 0.5,
-                  },
-                };
-                Plotly.newPlot(coin+"_30", data,layout,{responsive:true});
-              })
-          }
-          function plot_coin_365(coin){
-            var xs = []
-            var ys = []
-            fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=365`)
-              .then((res)=>res.json())
-              .then(data => {
-                data.forEach(element => {
-                  xs.push(new Date(element[0]))
-                  ys.push(element[4])
-                });
-              })
-              .then(()=>{
-                if(ys[0]>=ys[ys.length-1]){
-                  color = 'rgb(219, 64, 82)'
-                } else {
-                  color = 'rgb(64, 219, 82)'
-                }
-                var btc = {
-                  x: xs,
-                  y: ys,
-                  marker:{
-                    color:color
-                  }
-                };
-                var data = [btc];
-                var layout = {
-                  autosize: true,
-                  xaxis:{
-                    fixedrange:true
-                  },
-                  yaxis:{
-                    fixedrange:true
-                  },
-                  title: {
-                    text:coin,
-                    font: {
-                      family: 'Courier New, monospace',
-                      size: 24
-                    },
-                    xref: 'paper',
-                    x: 0.5,
-                  },
-                };
-                Plotly.newPlot(coin+"_365", data,layout,{responsive:true});
-              })
-          }
-          var coins = ['bitcoin','ethereum','dogecoin','bitcoin-cash','litecoin','bitcoin-cash-sv','ethereum-classic']
-          coins.forEach(plot_coin_1)
-          coins.forEach(plot_coin_7)
-          coins.forEach(plot_coin_30)
-          coins.forEach(plot_coin_365)
-        </script>
-        <style>
-            .modebar{
-                  display: none !important;
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script>
+      function plot_coin_1(coin) {
+        var xs = []
+        var ys = []
+        fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=1`)
+          .then((res) => res.json())
+          .then(data => {
+            data.forEach(element => {
+              xs.push(new Date(element[0]))
+              ys.push(element[4])
+            });
+          })
+          .then(() => {
+            if (ys[0] >= ys[ys.length - 1]) {
+              color = 'rgb(219, 64, 82)'
+            } else {
+              color = 'rgb(64, 219, 82)'
             }
-            table{
-                width: 100%;
-                text-align: center;
+            var btc = {
+              x: xs,
+              y: ys,
+              marker: {
+                color: color
+              }
+            };
+            var data = [btc];
+            var layout = {
+              autosize: true,
+              xaxis: {
+                fixedrange: true
+              },
+              yaxis: {
+                fixedrange: true
+              },
+              title: {
+                text: coin,
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 24
+                },
+                xref: 'paper',
+                x: 0.5,
+              },
+            };
+            Plotly.newPlot(coin + "_1", data, layout, { responsive: true });
+          })
+      }
+      function plot_coin_7(coin) {
+        var xs = []
+        var ys = []
+        fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=7`)
+          .then((res) => res.json())
+          .then(data => {
+            data.forEach(element => {
+              xs.push(new Date(element[0]))
+              ys.push(element[4])
+            });
+          })
+          .then(() => {
+            if (ys[0] >= ys[ys.length - 1]) {
+              color = 'rgb(219, 64, 82)'
+            } else {
+              color = 'rgb(64, 219, 82)'
             }
-            .title{
-                text-align: left;
+            var btc = {
+              x: xs,
+              y: ys,
+              marker: {
+                color: color
+              }
+            };
+            var data = [btc];
+            var layout = {
+              autosize: true,
+              xaxis: {
+                fixedrange: true
+              },
+              yaxis: {
+                fixedrange: true
+              },
+              title: {
+                text: coin,
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 24
+                },
+                xref: 'paper',
+                x: 0.5,
+              },
+            };
+            Plotly.newPlot(coin + "_7", data, layout, { responsive: true });
+          })
+      }
+      function plot_coin_30(coin) {
+        var xs = []
+        var ys = []
+        fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=30`)
+          .then((res) => res.json())
+          .then(data => {
+            data.forEach(element => {
+              xs.push(new Date(element[0]))
+              ys.push(element[4])
+            });
+          })
+          .then(() => {
+            if (ys[0] >= ys[ys.length - 1]) {
+              color = 'rgb(219, 64, 82)'
+            } else {
+              color = 'rgb(64, 219, 82)'
             }
-            .comments{
-                text-align: right;
+            var btc = {
+              x: xs,
+              y: ys,
+              marker: {
+                color: color
+              }
+            };
+            var data = [btc];
+            var layout = {
+              autosize: true,
+              xaxis: {
+                fixedrange: true
+              },
+              yaxis: {
+                fixedrange: true
+              },
+              title: {
+                text: coin,
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 24
+                },
+                xref: 'paper',
+                x: 0.5,
+              },
+            };
+            Plotly.newPlot(coin + "_30", data, layout, { responsive: true });
+          })
+      }
+      function plot_coin_365(coin) {
+        var xs = []
+        var ys = []
+        fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=365`)
+          .then((res) => res.json())
+          .then(data => {
+            data.forEach(element => {
+              xs.push(new Date(element[0]))
+              ys.push(element[4])
+            });
+          })
+          .then(() => {
+            if (ys[0] >= ys[ys.length - 1]) {
+              color = 'rgb(219, 64, 82)'
+            } else {
+              color = 'rgb(64, 219, 82)'
             }
-            .container {
-            margin: 50px auto;
-            padding: 5px;
-            max-width: 850px;
-            }
-            table td, table td * {
-            vertical-align: top;
-            }
-            td{
-                padding: .51em;
-            }
-            .header-frame{
-                text-align: center;
-            }
-            .toggler{
-              display: flex;
-              justify-content: space-around;
-            }
-        </style>
-        <script src="../js/script.js"></script>
+            var btc = {
+              x: xs,
+              y: ys,
+              marker: {
+                color: color
+              }
+            };
+            var data = [btc];
+            var layout = {
+              autosize: true,
+              xaxis: {
+                fixedrange: true
+              },
+              yaxis: {
+                fixedrange: true
+              },
+              title: {
+                text: coin,
+                font: {
+                  family: 'Courier New, monospace',
+                  size: 24
+                },
+                xref: 'paper',
+                x: 0.5,
+              },
+            };
+            Plotly.newPlot(coin + "_365", data, layout, { responsive: true });
+          })
+      }
+      var coins = ['bitcoin', 'ethereum', 'dogecoin', 'bitcoin-cash', 'litecoin', 'bitcoin-cash-sv', 'ethereum-classic']
+      coins.forEach(plot_coin_1)
+      coins.forEach(plot_coin_7)
+      coins.forEach(plot_coin_30)
+      coins.forEach(plot_coin_365)
+    </script>
+    <style>
+      .modebar {
+        display: none !important;
+      }
+      .toggler {
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+    <script>
+      let colors = ["#24d05a", "#eb4888", "#10a2f5", "#e9bc3f"];
+
+(function() {
+  setRandomLinkColor();
+  setColorHoverListener();
+  setBioEventListener();
+
+
+
+  setInterval(() => {
+    setRandomLinkColor();
+  }, 5000);
+})();
+
+/* Dark Mode */
+function setModeEventListener() {
+  let list = document.body.classList;
+  document.getElementById("toggler").addEventListener("change", event => {
+    event.target.checked ? list.add("dark-mode") : list.remove("dark-mode");
+  });
+}
+
+/* Colors */
+
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function setRandomLinkColor() {
+  Array.from(document.getElementsByTagName("a")).forEach(e => {
+    e.style.color = getRandomColor();
+  });
+}
+
+function setColorHoverListener() {
+  Array.from(document.querySelectorAll("a, button")).forEach(e => {
+    e.addEventListener("mouseover", setRandomLinkColor);
+  });
+}
+
+/* Photos */
+
+function setRandomPhoto() {
+  let num = 1;
+  document.getElementById("propic").src = `./img/headshots/face${num}.png`;
+  //let num = Math.floor(Math.random() * 2) + 1;
+}
+
+/* Bio Toggles */
+
+function setBioEventListener() {
+  Array.from(document.getElementsByTagName("button")).forEach(e => {
+    e.addEventListener("click", bioToggle);
+  });
+}
+
+function bioToggle(e) {
+  let bioType = e.target;
+  let color = getRandomColor();
+  off(bioType);
+  bioType.style.cssText = `border-color: ${color}; color: ${color}; font-weight: bold;`;
+  let bioTypeElement = document.getElementsByClassName(bioType.id)[0];
+  if (bioTypeElement !== undefined) bioTypeElement.classList.add("show");
+}
+
+function off(bioType) {
+  Array.from(document.getElementsByTagName("button")).forEach(butt => {
+    butt.style.borderColor = "#96979c";
+    butt.style.color = "#96979c";
+  });
+  Array.from(document.getElementsByClassName("bio")).forEach(e => {
+    e.classList.remove("show");
+  });
+}
+
+    </script>
 
 </body>
 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Andrew Smith</title>
+    <meta name="description" content="Andrew Smith, {description}." />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Andrew Smith" />
+    <meta property="og:url" content="http://smithandrewk.github.io/" />
+    <!-- <meta property="og:image" content="http://cassidoo.co/img/casssquare.jpg" /> -->
+    <meta property="og:description" content="Andrew Smith, {description}." />
+    <meta property="og:site_name" content="Andrew Smith" />
+
+    <meta name="theme-color" content="#ffffff" />
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../style/style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-section">
+            <div class="header-frame">
+                <h1>Crypto</h1>
+            </div>
+
+        </div>
+        <div class="bio-switcher">
+            <div class="bio short show">
+            </div>
+        </div>
+        <div id='bitcoin'><!-- Plotly chart will be drawn inside this DIV --></div>        <!-- load the d3.js library -->	
+        <div id='ethereum'><!-- Plotly chart will be drawn inside this DIV --></div>        <!-- load the d3.js library -->	
+        <div id='dogecoin'><!-- Plotly chart will be drawn inside this DIV --></div>        <!-- load the d3.js library -->	
+        <div id='bitcoin-cash'><!-- Plotly chart will be drawn inside this DIV --></div>        <!-- load the d3.js library -->	
+        <div id='litecoin'><!-- Plotly chart will be drawn inside this DIV --></div>        <!-- load the d3.js library -->	
+        <div id='bitcoin-cash-sv'><!-- Plotly chart will be drawn inside this DIV --></div>        <!-- load the d3.js library -->	
+        <div id='ethereum-classic'><!-- Plotly chart will be drawn inside this DIV --></div>        <!-- load the d3.js library -->	
+
+
+        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+        <script>
+          function plot_coin(coin){
+            var xs = []
+            var ys = []
+            fetch(`https://api.coingecko.com/api/v3/coins/${coin}/ohlc?vs_currency=usd&days=7`)
+              .then((res)=>res.json())
+              .then(data => {
+                data.forEach(element => {
+                  xs.push(new Date(element[0]))
+                  ys.push(element[4])
+                });
+              })
+              .then(()=>{
+                console.log(ys[0],ys[ys.length-1])
+                if(ys[0]>=ys[ys.length-1]){
+                  color = 'rgb(219, 64, 82)'
+                } else {
+                  color = 'rgb(64, 219, 82)'
+                }
+                var btc = {
+                  x: xs,
+                  y: ys,
+                  marker:{
+                    color:color
+                  }
+                };
+                var data = [btc];
+                var layout = {
+                  title: {
+                    text:coin,
+                    font: {
+                      family: 'Courier New, monospace',
+                      size: 24
+                    },
+                    xref: 'paper',
+                    x: 0.5,
+                  },
+                };
+                Plotly.newPlot(coin, data,layout),{responsive:true};
+              })
+          }
+          var coins = ['bitcoin','ethereum','dogecoin','bitcoin-cash','litecoin','bitcoin-cash-sv','ethereum-classic']
+          coins.forEach(plot_coin)
+        </script>
+        <style>
+            table{
+                width: 100%;
+                text-align: center;
+            }
+            .title{
+                text-align: left;
+            }
+            .comments{
+                text-align: right;
+            }
+            .container {
+            margin: 50px auto;
+            padding: 5px;
+            max-width: 850px;
+            }
+            table td, table td * {
+            vertical-align: top;
+            }
+            td{
+                padding: .51em;
+            }
+            .header-frame{
+                text-align: center;
+            }
+        </style>
+</body>
+
+</html>

@@ -25,8 +25,8 @@
   <div class="container">
     <div class="header-section">
       <div class="header-frame">
-        <h1>Crypto</h1>
-        <i>7 cryptocurrency prices over the last seven days. Focus on a certain cryptocurrency by following colored links at the top of the page or chart titles. Interact with each chart by hovering or tapping to investigate specific prices.</i>
+        <h1>bitcoin</h1>
+        <i>See bitcoin price charts over varying resolutions as indicators for entering or exiting a market position.</i>
       </div>
 
     </div>
@@ -42,29 +42,18 @@
       <a href="litecoin.html">litecoin</a>
 
     </div>
-    <div class="bio-switcher">
-      <div class="bio 7 show">
-        <div id='bitcoin_7'>
-          <!-- Plotly chart will be drawn inside this DIV -->
-        </div>
-        <div id='ethereum_7'>
-          <!-- Plotly chart will be drawn inside this DIV -->
-        </div>
-        <div id='dogecoin_7'>
-          <!-- Plotly chart will be drawn inside this DIV -->
-        </div>
-        <div id='bitcoin-cash_7'>
-          <!-- Plotly chart will be drawn inside this DIV -->
-        </div>
-        <div id='litecoin_7'>
-          <!-- Plotly chart will be drawn inside this DIV -->
-        </div>
-        <div id='bitcoin-cash-sv_7'>
-          <!-- Plotly chart will be drawn inside this DIV -->
-        </div>
-        <div id='ethereum-classic_7'>
-          <!-- Plotly chart will be drawn inside this DIV -->
-        </div>
+    <div class="bio 7 show">
+      <div id='bitcoin_1'>
+        <!-- Plotly chart will be drawn inside this DIV -->
+      </div>
+      <div id='bitcoin_7'>
+        <!-- Plotly chart will be drawn inside this DIV -->
+      </div>
+      <div id='bitcoin_30'>
+        <!-- Plotly chart will be drawn inside this DIV -->
+      </div>
+      <div id='bitcoin_365'>
+        <!-- Plotly chart will be drawn inside this DIV -->
       </div>
     </div>
 
@@ -105,10 +94,10 @@
                 fixedrange: true
               },
               title: {
-                text: (`<a href = '${coin}.html'>${coin}</a>`),
+                text: "Last 24 hours",
                 font: {
                   family: 'Courier New, monospace',
-                  size: 24
+                  size: 18
                 },
                 xref: 'paper',
                 x: 0.5,
@@ -151,10 +140,10 @@
                 fixedrange: true
               },
               title: {
-                text: (`<a href = '${coin}.html'>${coin}</a>`),
+                text: "Last 7 days",
                 font: {
                   family: 'Courier New, monospace',
-                  size: 24
+                  size: 18
                 },
                 xref: 'paper',
                 x: 0.5,
@@ -197,10 +186,10 @@
                 fixedrange: true
               },
               title: {
-                text: (`<a href = '${coin}.html'>${coin}</a>`),
+                text: "Last 30 days",
                 font: {
                   family: 'Courier New, monospace',
-                  size: 24
+                  size: 18
                 },
                 xref: 'paper',
                 x: 0.5,
@@ -243,10 +232,10 @@
                 fixedrange: true
               },
               title: {
-                text: (`<a href = '${coin}.html'>${coin}</a>`),
+                text: "Last 365 days",
                 font: {
                   family: 'Courier New, monospace',
-                  size: 24
+                  size: 18
                 },
                 xref: 'paper',
                 x: 0.5,
@@ -255,16 +244,15 @@
             Plotly.newPlot(coin + "_365", data, layout, { responsive: true });
           })
       }
-      var coins = ['bitcoin', 'ethereum', 'dogecoin', 'bitcoin-cash', 'litecoin', 'bitcoin-cash-sv', 'ethereum-classic']
-      coins.forEach(plot_coin_7)
+      plot_coin_1('bitcoin')
+      plot_coin_7('bitcoin')
+      plot_coin_30('bitcoin')
+      plot_coin_365('bitcoin')
+
     </script>
     <style>
       .modebar {
         display: none !important;
-      }
-      .toggler {
-        display: flex;
-        justify-content: space-around;
       }
     </style>
     <script>
@@ -274,9 +262,6 @@
   setRandomLinkColor();
   setColorHoverListener();
   setBioEventListener();
-
-
-
   setInterval(() => {
     setRandomLinkColor();
   }, 5000);

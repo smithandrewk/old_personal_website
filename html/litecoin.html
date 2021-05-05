@@ -72,6 +72,8 @@
             });
           })
           .then(() => {
+            change = ys[ys.length-1]-ys[0]
+            percent_change = ((change/ys[0])*100).toFixed(2)
             if (ys[0] >= ys[ys.length - 1]) {
               color = 'rgb(219, 64, 82)'
             } else {
@@ -94,7 +96,7 @@
                 fixedrange: true
               },
               title: {
-                text: "Last 24 hours",
+                text: `Last 24 hours (${percent_change}%)`,
                 font: {
                   family: 'Courier New, monospace',
                   size: 18
@@ -118,6 +120,8 @@
             });
           })
           .then(() => {
+            change = ys[ys.length-1]-ys[0]
+            percent_change = ((change/ys[0])*100).toFixed(2)
             if (ys[0] >= ys[ys.length - 1]) {
               color = 'rgb(219, 64, 82)'
             } else {
@@ -140,7 +144,7 @@
                 fixedrange: true
               },
               title: {
-                text: "Last 7 days",
+                text: `Last 7 days (${percent_change}%)`,
                 font: {
                   family: 'Courier New, monospace',
                   size: 18
@@ -164,6 +168,8 @@
             });
           })
           .then(() => {
+            change = ys[ys.length-1]-ys[0]
+            percent_change = ((change/ys[0])*100).toFixed(2)
             if (ys[0] >= ys[ys.length - 1]) {
               color = 'rgb(219, 64, 82)'
             } else {
@@ -186,7 +192,7 @@
                 fixedrange: true
               },
               title: {
-                text: "Last 30 days",
+                text: `Last 30 days (${percent_change}%)`,
                 font: {
                   family: 'Courier New, monospace',
                   size: 18
@@ -210,6 +216,8 @@
             });
           })
           .then(() => {
+            change = ys[ys.length-1]-ys[0]
+            percent_change = ((change/ys[0])*100).toFixed(2)
             if (ys[0] >= ys[ys.length - 1]) {
               color = 'rgb(219, 64, 82)'
             } else {
@@ -232,7 +240,7 @@
                 fixedrange: true
               },
               title: {
-                text: "Last 365 days",
+                text: `Last 365 days (${percent_change}%)`,
                 font: {
                   family: 'Courier New, monospace',
                   size: 18

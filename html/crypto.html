@@ -83,6 +83,9 @@
             });
           })
           .then(() => {
+            change = ys[ys.length-1]-ys[0]
+            percent_change = change/ys[0]
+
             if (ys[0] >= ys[ys.length - 1]) {
               color = 'rgb(219, 64, 82)'
             } else {
@@ -105,7 +108,7 @@
                 fixedrange: true
               },
               title: {
-                text: (`<a href = '${coin}.html'>${coin}</a>`),
+                text: (`<a href = '${coin}.html'>${coin} (+${percent_change}%)</a>`),
                 font: {
                   family: 'Courier New, monospace',
                   size: 24
@@ -129,6 +132,9 @@
             });
           })
           .then(() => {
+            change = ys[ys.length-1]-ys[0]
+            percent_change = ((change/ys[0])*100).toFixed(2)
+
             if (ys[0] >= ys[ys.length - 1]) {
               color = 'rgb(219, 64, 82)'
             } else {
@@ -151,7 +157,7 @@
                 fixedrange: true
               },
               title: {
-                text: (`<a href = '${coin}.html'>${coin}</a>`),
+                text: (`<a href = '${coin}.html'>${coin} (+${percent_change}%)</a>`),
                 font: {
                   family: 'Courier New, monospace',
                   size: 24
@@ -175,6 +181,9 @@
             });
           })
           .then(() => {
+            change = ys[ys.length-1]-ys[0]
+            percent_change = ((change/ys[0])*100).toFixed(2)
+
             if (ys[0] >= ys[ys.length - 1]) {
               color = 'rgb(219, 64, 82)'
             } else {
@@ -197,7 +206,7 @@
                 fixedrange: true
               },
               title: {
-                text: (`<a href = '${coin}.html'>${coin}</a>`),
+                text: (`<a href = '${coin}.html'>${coin} (+${percent_change}%)</a>`),
                 font: {
                   family: 'Courier New, monospace',
                   size: 24
@@ -221,6 +230,9 @@
             });
           })
           .then(() => {
+            change = ys[ys.length-1]-ys[0]
+            percent_change = ((change/ys[0])*100).toFixed(2)
+
             if (ys[0] >= ys[ys.length - 1]) {
               color = 'rgb(219, 64, 82)'
             } else {
@@ -243,7 +255,7 @@
                 fixedrange: true
               },
               title: {
-                text: (`<a href = '${coin}.html'>${coin}</a>`),
+                text: (`<a href = '${coin}.html'>${coin} (+${percent_change}%)</a>`),
                 font: {
                   family: 'Courier New, monospace',
                   size: 24

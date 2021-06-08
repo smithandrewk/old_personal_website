@@ -29,6 +29,7 @@
         <div class="links">
             <a href="http://github.com/smithandrewk">github</a>
             <a href="mailto:aks3@email.sc.edu">email</a>
+            <a href="stanley.jpg"><img src="stanley.png" alt="" width="30"></a>
             <!-- <a href="html/movies.html">movies</a>
             <a href="html/books.html">books</a>
             <a href="html/mam.html">mam</a>
@@ -57,8 +58,42 @@
     </div>
 </body>
 <footer style="display: flex; justify-content: center;">
-    <a href="stanley.jpg"><img src="stanley.png" alt="" width="30"></a>
+<div class="tradingview-widget-container" style="position: fixed; width: 100%; bottom: 0; left: 0;">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+        {
+        "symbols": [
+        {
+            "description": "SPY",
+            "proName": "AMEX:SPY"
+        },
+        {
+            "description": "BTCUSD",
+            "proName": "BITSTAMP:BTCUSD"
+        },
+        {
+            "description": "Tesla",
+            "proName": "NASDAQ:TSLA"
+        },
+        {
+            "description": "Sundial",
+            "proName": "NASDAQ:SNDL"
+        },
+        {
+            "description": "Cardano",
+            "proName": "BINANCE:ADAUSD"
+        }
+        ],
+        "colorTheme": "light",
+        "isTransparent": true,
+        "showSymbolLogo": true,
+        "locale": "en"
+    }
+    </script>
+  </div>
+
 </footer>
 <script src="./js/script.js"></script>
+</style>
 
 </html>

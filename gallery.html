@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        min-height: 100vh;
+        grid-gap: 2rem;
+    }
+    
+    .img-container {
+        overflow: hidden;
+    }
+    
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+    }
+    
+    .img-container img:hover {
+        transform: scale(1.2)
+    }
+    
+    .modal {
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s ease-out;
+    }
+    
+    .modal.open {
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+    .modal p {
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+    }
+    
+    .full-img {
+        position: absolute;
+        height: 70%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        transition: all 0.25s ease-out;
+    }
+    
+    .full-img.open {
+        transform: translate(-50%, -50%) scale(1);
+        transition: all 0.25s ease-out;
+    }
+</style>
+
+<body>
+    <div class="gallery">
+        <div class="img-container">
+            <img src="./img/stanley.jpg" alt="Stanely" data-original="" srcset="">
+        </div>
+        <div class="img-container">
+            <img src="./img/cg.jpg" alt="Cg" srcset="">
+        </div>
+        <div class="img-container">
+            <img src="./img/waho.jpg" alt="Waho" srcset="">
+        </div>
+        <div class="img-container">
+            <img src="./img/gig.jpg" alt="Gig" srcset="">
+        </div>
+    </div>
+    <div class="modal">
+        <img class="full-img" src="./img/gig.jpg" alt="" srcset="">
+        <p class="caption"></p>
+    </div>
+</body>
+<script>
+    const modal = document.querySelector(".modal")
+    const previews = document.querySelectorAll(".gallery img")
+    const original = document.querySelector(".full-img");
+    const caption = document.querySelector(".caption");
+
+    previews.forEach((preview) => {
+        preview.addEventListener("click", () => {
+            modal.classList.add("open");
+            original.classList.add("open");
+            original.src = preview.src;
+            const altText = preview.alt;
+            caption.textContent = altText;
+        })
+    })
+    modal.addEventListener("click", (e) => {
+        if (e.target.classList.contains('modal')) {
+            modal.classList.remove('open');
+            original.classList.remove("open");
+        }
+    })
+</script>
+
+</html>

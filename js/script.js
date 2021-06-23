@@ -1,20 +1,39 @@
 let colors = ["#0040FF", "#FF0000", "#00B135"];
-// yellow
-// #FFE500
+let thats = [
+    ["z", "ask for ironic photos at restaurants with my friends"],
+    ["cg", "have friends who suprise me with cookie cake on my birthday"],
+    ["gig", "play the keys"],
+    ["mh", "play the keys"],
+    ["waho", "love waffle house"]
+];
+const modal = document.querySelector(".modal")
+const original = document.querySelector(".full-img");
+const caption = document.querySelector(".caption");
+
+
 (function() {
-  // setModeEventListener();
-  setRandomLinkColor();
-  setColorHoverListener();
-  // setBioEventListener();
-  // setRandomPhoto();
 
-  setInterval(() => {
-    setRandomPhoto();
-  }, 2500);
-
-  setInterval(() => {
+    // setModeEventListener();
     setRandomLinkColor();
-  }, 5000);
+    setColorHoverListener();
+    // setBioEventListener();
+    // setRandomPhoto();
+
+    modal.addEventListener("click", (e) => {
+        if (e.target.classList.contains('modal')) {
+            modal.classList.remove('open');
+            original.classList.remove("open");
+        }
+    })
+    setRandomThat();
+    setInterval(() => {
+        setRandomPhoto();
+        setRandomThat();
+    }, 6000);
+
+    setInterval(() => {
+        setRandomLinkColor();
+    }, 5000);
 })();
 
 /* Dark Mode */
@@ -26,29 +45,40 @@ let colors = ["#0040FF", "#FF0000", "#00B135"];
 // }
 
 /* Colors */
+function setRandomThat() {
+    that = thats[Math.floor(Math.random() * thats.length)]
+    anchor = document.getElementById("that");
+    anchor.innerHTML = that[1];
+    original.src = "./img/" + that[0] + ".jpg"
+    caption.textContent = "Did you know that I " + anchor.innerHTML + "?";
+    anchor.addEventListener("click", () => {
+        modal.classList.add("open");
+        original.classList.add("open");
+    })
+
+}
 
 function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
+    return colors[Math.floor(Math.random() * colors.length)];
 }
 
 function setRandomLinkColor() {
-  Array.from(document.getElementsByTagName("a")).forEach(e => {
-    e.style.color = getRandomColor();
-  });
+    Array.from(document.getElementsByTagName("a")).forEach(e => {
+        e.style.color = getRandomColor();
+    });
 }
 
 function setColorHoverListener() {
-  Array.from(document.querySelectorAll("a, button")).forEach(e => {
-    e.addEventListener("mouseover", setRandomLinkColor);
-  });
+    Array.from(document.querySelectorAll("a, button")).forEach(e => {
+        e.addEventListener("mouseover", setRandomLinkColor);
+    });
 }
 
 /* Photos */
 
 function setRandomPhoto() {
-  let num = Math.floor(Math.random() * 3) + 1;
-  console.log(num)
-  document.getElementById("propic").src = `./img/headshots/face${num}.png`;
+    let num = Math.floor(Math.random() * 3) + 1;
+    document.getElementById("propic").src = `./img/headshots/face${num}.png`;
 }
 
 /* Bio Toggles */

@@ -1,7 +1,6 @@
 let colors = ["#0040FF", "#FF0000", "#00B135"];
 let thats = [
     ["z", "ask for ironic photos at restaurants with my friends"],
-    ["cg", "have friends who suprise me with cookie cake on my birthday"],
     ["gig", "play the keys"],
     ["mh", "play the keys"],
     ["waho", "love waffle house"]

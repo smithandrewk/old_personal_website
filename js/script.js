@@ -63,7 +63,12 @@ function getRandomColor() {
 
 function setRandomLinkColor() {
     Array.from(document.getElementsByTagName("a")).forEach(e => {
-        e.style.color = getRandomColor();
+        console.log(e)
+        if (e.className == "bmc-btn") {
+            e.style.color = getRandomColor();
+        } else {
+            e.style.color = getRandomColor();
+        }
     });
 }
 

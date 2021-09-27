@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        header img {
+            height: 50vh;
+            width: 25vw;
+            object-position: center;
+            object-fit: cover;
+        }
+        
+        html {
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+        
+         ::-webkit-scrollbar {
+            width: 0;
+            /* Remove scrollbar space */
+            background: transparent;
+            /* Optional: just make scrollbar invisible */
+        }
+        /* Optional: show position indicator in red */
+        
+         ::-webkit-scrollbar-thumb {
+            background: #FF0000;
+        }
+        
+        header {
+            position: relative;
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+        /* Top left text */
+        
+        h2 {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+    </style>
+</head>
+<style>
+    .vert>.cover {
+        display: none;
+    }
+    
+    @media screen and (orientation:portrait) {
+        .main>.cover {
+            display: none;
+        }
+        .vert>.cover {
+            display: block;
+            width: 50vw;
+            height: 40vh;
+        }
+    }
+    
+    @media screen and (orientation:landscape) {
+        .vert>.cover {
+            display: none;
+        }
+    }
+</style>
+<header>
+    <div class="main img-row" style="display: flex;">
+        <img class="cover" src="0.JPG" alt="">
+        <img class="cover" src="1.JPG" alt="">
+        <img class="cover" src="2.JPG" alt="">
+        <img class="cover" src="3.JPG" alt="">
+
+    </div>
+    <div class="main img-row" style="display: flex;">
+        <img class="cover" src="4.JPG" alt="">
+        <img class="cover" src="8.JPG" alt="">
+        <img class="cover" src="6.JPG" alt="">
+        <img class="cover" src="7.JPG" alt="">
+
+    </div>
+    <div class="vert img-row" style="display: flex;">
+        <img class="cover" src="0.JPG" alt="">
+        <img class="cover" src="1.JPG" alt="">
+
+    </div>
+    <div class="vert img-row" style="display: flex;">
+        <img class="cover" src="2.JPG" alt="">
+        <img class="cover" src="3.JPG" alt="">
+
+    </div>
+    <div class="vert img-row" style="display: flex;">
+        <img class="cover" src="4.JPG" alt="">
+        <img class="cover" src="8.JPG" alt="">
+
+    </div>
+    <div class="vert img-row" style="display: flex;">
+        <img class="cover" src="6.JPG" alt="">
+        <img class="cover" src="7.JPG" alt="">
+    </div>
+
+</header>
+
+<body>
+
+</body>
+
+</html>

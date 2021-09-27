@@ -16,14 +16,38 @@
 </head>
 
 <body>
+    <style>
+        video#bgvideo {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+            z-index: -100;
+            top: 0;
+            left: 30px;
+        }
+        
+        * {
+            color: white;
+        }
+        
+        h1 {
+            color: black;
+        }
+    </style>
     <div class="container">
+        <div id="hero">
+            <video playsinline autoplay muted loop id="bgvideo" width="x" height="y">
+            <source src="0.MP4" type="video/mp4">
+            </video>
+        </div>
         <div class="header-section">
             <div class="header-frame">
                 <h1>Andrew Smith</h1>
                 <h2>PhD Student in South Carolina</h2>
                 <h3><i>Did you know that I <u><a id="that">love coffee</a></u>?</i>
                 </h3>
-                <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="andrewsmith" data-color="#FFFFFF" data-emoji="" data-font="Poppins" data-text="Want to buy me a coffee?" data-outline-color="#000000"
+                <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="andrewsmith" data-color="#FFFFFF00" data-emoji="" data-font="Poppins" data-text="Want to buy me a coffee?" data-outline-color="#000000"
                     data-font-color="#ffffff" data-coffee-color="#964B00"></script>
                 <style>
                     .bmc-btn {
@@ -46,6 +70,7 @@
             <a href="html/books.html">books</a>
             <a href="html/mam.html">mam</a>
             <a href="html/crypto.html">crypto</a>
+            <a href="trip">trip</a>
             <!-- <a href="">cv</a> -->
             <!-- <a href="">spotify</a> -->
             <!-- <a href="">lists</a> -->
@@ -56,7 +81,7 @@
             <!-- <a href="scholar"></a> -->
         </div>
 
-        <div class="commits">
+        <!-- <div class="commits">
             <ul id="list">
                 <li>
                     <span class="alignleft"><i>Acceptance of <a href="./pdf/ICRA2021_Workshop_Radar.pdf" target="_blank">Radar based navigation for Autonomous Surface Vehicles</a> for presentation at the Radar Perception for All-Weather Autonomy Workshop, 2021 IEEE International Conference on Robotics and Automation (ICRA), May 30 - June 5, 2021, Xi'an, China. </i></span>
@@ -68,7 +93,7 @@
                     <span class="alignright" style="color: #e9bc3f;">04 May @ 08:46 EST</span>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </div>
 </body>
 <script src="./js/script.js"></script>

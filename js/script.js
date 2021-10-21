@@ -63,7 +63,7 @@ function getRandomColor() {
 
 function setRandomLinkColor() {
     Array.from(document.getElementsByTagName("a")).forEach(e => {
-        console.log(e)
+        // console.log(e)
         if (e.className == "bmc-btn") {
             e.style.color = getRandomColor();
         } else {
@@ -81,7 +81,8 @@ function setColorHoverListener() {
 /* Photos */
 
 function setRandomPhoto() {
-    let num = Math.floor(Math.random() * 3) + 1;
+    let num = Math.floor(Math.random() * 5) + 1;
+    console.log(num)
     document.getElementById("propic").src = `./img/headshots/face${num}.png`;
 }
 
